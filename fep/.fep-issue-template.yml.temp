@@ -1,0 +1,109 @@
+# This file is an archive of the FEP Issue template.
+# Not active under the current PR-only workflow.
+# Restore this file (rename to fep.yml) if Issue-based tracking is needed in the future.
+# The leading dot prevents GitHub from rendering it as an issue template.
+
+name: "FEP (FlagOS Enhancement Proposal)"
+description: Propose a FlagOS Feature enhancement
+title: "[FEP][sig-xxx] Feature"
+labels: ["FEP"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## FlagOS Enhancement Proposal
+
+        Please review the [FEP process document](../blob/main/fep/README.md) before submitting.
+
+  - type: input
+    id: owner
+    attributes:
+      label: Owner
+      placeholder: "@xxx"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: sig
+    attributes:
+      label: SIG
+      options:
+        - sig-operator
+        - sig-compiler
+        - sig-network
+        - sig-framework
+        - sig-training
+        - sig-kernelgen
+        - sig-embodied
+        - sig-ai4s
+        - sig-benchmark
+        - sig-skills
+        - sig-tools
+        - sig-edge
+        - sig-architecture
+    validations:
+      required: true
+
+  - type: input
+    id: fep-doc
+    attributes:
+      label: FEP Document
+      description: Link to the FEP markdown file
+      placeholder: "https://github.com/FlagOS-AI/community/blob/main/fep/sig-xxx/NNNN-title.md"
+    validations:
+      required: false
+
+  - type: input
+    id: target-version
+    attributes:
+      label: Target Version
+      placeholder: "FlagOS 2.1"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What + Why
+      placeholder: |
+        ### What
+        ...
+
+        ### Why
+        ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria
+      description: Completion conditions (use checklist format)
+      placeholder: |
+        - [ ] Criteria 1
+        - [ ] Criteria 2
+    validations:
+      required: true
+
+  - type: textarea
+    id: related-prs
+    attributes:
+      label: Related PRs
+      description: PR checklist for implementing this feature
+      placeholder: |
+        - [ ] flagos-ai/FlagGems#xxx — description
+        - [ ] flagos-ai/FlagTree#xxx — description
+    validations:
+      required: false
+
+  - type: textarea
+    id: sig-deps
+    attributes:
+      label: Cross-SIG Dependencies
+      description: Other SIGs / Features this depends on
+      placeholder: |
+        Depends on sig-xxx feature
+    validations:
+      required: false
